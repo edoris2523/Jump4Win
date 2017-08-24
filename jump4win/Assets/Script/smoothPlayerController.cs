@@ -32,7 +32,7 @@ public class smoothPlayerController : MonoBehaviour {
 	}
 	
 	// Update is called once per frame
-	void Update () {
+	void FixedUpdate () {
 		Vector2 input = new Vector2 (Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
 		Vector2 inputDir = input.normalized;
 		bool running = Input.GetKey (KeyCode.LeftShift);

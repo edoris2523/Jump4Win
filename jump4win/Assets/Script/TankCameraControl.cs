@@ -1,11 +1,13 @@
 ﻿using UnityEngine;
+using System.Collections;
+using System.Collections.Generic;
 
 public class TankCameraControl : MonoBehaviour
 {
-	public float m_DampTime = 0.2f;                 // Approximate time for the camera to refocus.
+	public float m_DampTime = 0.7f;                 // Approximate time for the camera to refocus.
 	public float m_ScreenEdgeBuffer = 4f;           // Space between the top/bottom most target and the screen edge.
 	public float m_MinSize = 6.5f;                  // The smallest orthographic size the camera can be.
-	public Transform[] m_Targets; // All the targets the camera needs to encompass.
+	public List<Transform> m_Targets; // All the targets the camera needs to encompass.
 
 
 	private Camera m_Camera;                        // Used for referencing the camera.
@@ -13,10 +15,26 @@ public class TankCameraControl : MonoBehaviour
 	private Vector3 m_MoveVelocity;                 // Reference velocity for the smooth damping of the position.
 	private Vector3 m_DesiredPosition;              // The position the camera is moving towards.
 
+	private int focusvalue = 5;
+
+	private GameObject[] gb;
 
 	private void Awake ()
 	{
 		m_Camera = GetComponentInChildren<Camera> ();
+	}
+
+	IEnumerator Start()
+	{
+		yield return new WaitForSeconds (1f);
+
+		gb = GameObject.FindGameObjectsWithTag ("Player");
+
+		for(int i = 0; i < gb.GetLength(0); ++i)
+		{
+			m_Targets.Add (gb[i].transform);
+		}
+
 	}
 
 
@@ -45,8 +63,12 @@ public class TankCameraControl : MonoBehaviour
 		Vector3 averagePos = new Vector3 ();
 		int numTargets = 0;
 
+		if (m_Targets.Count == 0) {
+			averagePos = new Vector3 (0, 0, 0);
+		}
+
 		// Go through all the targets and add their positions together.
-		for (int i = 0; i < m_Targets.Length; i++)
+		for (int i = 0; i < m_Targets.Count; i++)
 		{
 			// If the target isn't active, go on to the next one.
 			if (!m_Targets[i].gameObject.activeSelf)
@@ -54,8 +76,14 @@ public class TankCameraControl : MonoBehaviour
 
 			// Add to the average and increment the number of targets in the average.
 			averagePos += m_Targets[i].position;
+			if(i == 0)
+			{
+				averagePos += m_Targets [i].position * focusvalue;
+				numTargets += focusvalue;
+			}
 			numTargets++;
 		}
+			
 
 		// If there are targets divide the sum of the positions by the number of them to find the average.
 		if (numTargets > 0)
@@ -87,7 +115,7 @@ public class TankCameraControl : MonoBehaviour
 		float size = 0f;
 
 		// Go through all the targets...
-		for (int i = 0; i < m_Targets.Length; i++)
+		for (int i = 0; i < m_Targets.Count; i++)
 		{
 			// ... and if they aren't active continue on to the next target.
 			if (!m_Targets[i].gameObject.activeSelf)

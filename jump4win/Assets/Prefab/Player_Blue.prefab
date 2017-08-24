@@ -90,6 +90,10 @@ GameObject:
   - component: {fileID: 114282578219078550}
   - component: {fileID: 54886886509404684}
   - component: {fileID: 114386563616175408}
+  - component: {fileID: 114942573386575500}
+  - component: {fileID: 114841487449280430}
+  - component: {fileID: 114628354631167278}
+  - component: {fileID: 114508585114432814}
   m_Layer: 8
   m_Name: Player_Blue
   m_TagString: Player
@@ -312,7 +316,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1760168906763006}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: efc1599d022b42a458b7b4fd339d67df, type: 3}
   m_Name: 
@@ -331,13 +335,32 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1760168906763006}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2be40f95ab6f7864d9a3fe4e65443648, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   hp: 2
   isDead: 0
+--- !u!114 &114508585114432814
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1760168906763006}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e4d0a628f15c3ce489e546cdd70c02c6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  walkSpeed: 4
+  runSpeed: 9
+  gravity: -20
+  jumpHeight: 7
+  airControlPercent: 0.85
+  turnSmoothTime: 0.1
+  speedSmoothTime: 0.1
+  reachedApex: 0
 --- !u!114 &114625071991021116
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -349,6 +372,72 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cef70fb8be5cd3d4ba82e8c8c7b733ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &114628354631167278
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1760168906763006}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1768714887, guid: dc443db3e92b4983b9738c1131f555cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_TransformSyncMode: 4
+  m_SendInterval: 0.033333335
+  m_SyncRotationAxis: 2
+  m_RotationSyncCompression: 2
+  m_SyncSpin: 0
+  m_MovementTheshold: 0.001
+  m_VelocityThreshold: 0.0001
+  m_SnapThreshold: 5
+  m_InterpolateRotation: 15
+  m_InterpolateMovement: 1
+--- !u!114 &114841487449280430
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1760168906763006}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 32165e0e8d78a95459a9c9896a8715aa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hp: 2
+  isDead: 0
+--- !u!114 &114942573386575500
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1760168906763006}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 372142912, guid: dc443db3e92b4983b9738c1131f555cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SceneId:
+    m_Value: 0
+  m_AssetId:
+    i0: 35
+    i1: 228
+    i2: 6
+    i3: 22
+    i4: 124
+    i5: 252
+    i6: 64
+    i7: 228
+    i8: 107
+    i9: 29
+    i10: 190
+    i11: 108
+    i12: 17
+    i13: 227
+    i14: 88
+    i15: 168
+  m_ServerOnly: 0
+  m_LocalPlayerAuthority: 1
 --- !u!143 &143289836588409454
 CharacterController:
   m_ObjectHideFlags: 1

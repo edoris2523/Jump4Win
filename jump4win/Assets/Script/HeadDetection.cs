@@ -5,29 +5,47 @@ using UnityEngine;
 public class HeadDetection : MonoBehaviour {
 
 	private smoothPlayerController charCntrlr;
-	private HealthPoint hp;
+	private smoothPlayerController_NET charCntrlr_Net;
+	//private HealthPoint hp;
+	private HealthPoint_NET hp_Net;
 
 	void Start()
 	{
-		hp = GetComponentInParent<HealthPoint> ();
+		//hp = GetComponentInParent<HealthPoint> ();
+		hp_Net = GetComponentInParent<HealthPoint_NET> ();
 	}
 
 	void OnTriggerEnter(Collider col){
 		Debug.Log (col.gameObject.tag);
 		if(col.gameObject.tag == "Player_Foot" || col.gameObject.tag == "Enemy_Foot"){
 			Debug.Log ("I'm " + gameObject.transform.parent.name + "I'm get damaged");
-			hp.getDamaged (1);
-			charCntrlr = col.gameObject.GetComponentInParent<smoothPlayerController> ();
+			hp_Net.getDamaged (1);
 
-			if (charCntrlr != null) {
-				if (hp.hp < 0) {
+			if (charCntrlr = col.gameObject.GetComponentInParent<smoothPlayerController> ()) 
+			{
+				if (hp_Net.hp < 0) 
 					charCntrlr.forcedHighJump ();
-				} else{
+				else
 					charCntrlr.forcedJump ();
-				}
-			} else{
-				Debug.Log ("Can't find attached charactercontroller");
 			}
+			else
+			{
+				Debug.Log ("Can't find attached charactercontroller");
+			}	
+
+			if(charCntrlr_Net = col.gameObject.GetComponentInParent<smoothPlayerController_NET> ())
+			{
+				if (hp_Net.hp < 0) 
+					charCntrlr_Net.forcedHighJump ();
+			
+				else
+					charCntrlr_Net.forcedJump ();
+			}
+
+			else
+			{
+				Debug.Log ("Can't find attached charactercontroller_NET");
+			}	
 		}
 	}
 }

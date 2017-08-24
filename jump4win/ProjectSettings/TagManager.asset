@@ -12,6 +12,9 @@ TagManager:
   - Player_Foot
   - Enemy_Foot
   - Enemy_Head
+  - Ground
+  - Fire
+  - Text
   layers:
   - Default
   - TransparentFX
