@@ -11,6 +11,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scene/Gameplay_MatchMaking.unity
     guid: ba6b7cca8361bf5498776b8f6ba7c913
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scene/Gameplay_MatchMaking2.unity
     guid: 3a37f0a48b702844380d0801b4335758

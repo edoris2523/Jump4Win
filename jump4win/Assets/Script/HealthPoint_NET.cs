@@ -9,8 +9,6 @@ public class HealthPoint_NET : NetworkBehaviour {
 	public int hp = 2;
 	public bool isDead;
 
-	Text infoText;
-
 	public void getDamaged(int damage){
 		if (!isServer || hp <= 0)
 			return;
@@ -30,10 +28,9 @@ public class HealthPoint_NET : NetworkBehaviour {
 	void RpcDied()
 	{
 		Debug.Log (gameObject.transform.name + " Dead");
-		infoText = GameObject.FindObjectOfType<Text> ();
 		isDead = true;
 		gameObject.transform.gameObject.SetActive (false);
-
+		/*
 		if(isLocalPlayer){
 			infoText.text = "Game Over!";
 		}
@@ -41,7 +38,7 @@ public class HealthPoint_NET : NetworkBehaviour {
 			infoText.text = "You Won!";
 		}
 
-		Invoke("BackToLobby", 3f);
+		Invoke("BackToLobby", 3f);*/
 	}
 
 	void BackToLobby()
