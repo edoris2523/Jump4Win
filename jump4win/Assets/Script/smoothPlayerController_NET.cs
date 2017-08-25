@@ -116,6 +116,12 @@ public class smoothPlayerController_NET : NetworkBehaviour {
 		controller.Move (new Vector3(1f, 0f, 0f) * 70 * Time.deltaTime);
 	}
 
+	public void forcedMove(Vector3 dir)
+	{
+		Debug.Log ("ForcedMove");
+		controller.Move (dir);
+	}
+
 	float GetModifiedSmoothTime(float smoothTime){
 		if(controller.isGrounded){
 			return smoothTime;
