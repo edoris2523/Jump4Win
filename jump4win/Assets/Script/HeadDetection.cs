@@ -16,7 +16,6 @@ public class HeadDetection : MonoBehaviour {
 	}
 
 	void OnTriggerEnter(Collider col){
-		Debug.Log (col.gameObject.tag);
 		if(col.gameObject.tag == "Player_Foot" || col.gameObject.tag == "Enemy_Foot"){
 			Debug.Log ("I'm " + gameObject.transform.parent.name + "I'm get damaged");
 			hp_Net.getDamaged (1);

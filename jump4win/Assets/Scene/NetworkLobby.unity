@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
+  m_IndirectSpecularColor: {r: 0.37311992, g: 0.38074034, b: 0.35872713, a: 1}
 --- !u!157 &4
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -4882,7 +4882,7 @@ MonoBehaviour:
   m_GamePlayerPrefab: {fileID: 1255077489246276, guid: 95546467e8854e34093ba2a99b24442a,
     type: 2}
   m_LobbyScene: NetworkLobby
-  m_PlayScene: Gameplay_MatchMaking2
+  m_PlayScene: Gameplay_MatchMaking
   lobbySlots: []
   prematchCountdown: 3
   topPanel: {fileID: 1517214960}

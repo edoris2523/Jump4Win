@@ -255,6 +255,7 @@ namespace Prototype.NetworkLobby
 
 		public override void OnDestroyMatch(bool success, string extendedInfo)
 		{
+			_playerNumber = 0;
 			base.OnDestroyMatch(success, extendedInfo);
 			if (_disconnectServer)
             {
@@ -266,8 +267,7 @@ namespace Prototype.NetworkLobby
         //allow to handle the (+) button to add/remove player
         public void OnPlayersNumberModified(int count)
         {
-            _playerNumber += count;
-
+			//_playerNumber += count;
             int localPlayerCount = 0;
 			foreach (UnityEngine.Networking.PlayerController p in ClientScene.localPlayers)
                 localPlayerCount += (p == null || p.playerControllerId == -1) ? 0 : 1;
@@ -360,7 +360,6 @@ namespace Prototype.NetworkLobby
         {
             //This hook allows you to apply state data from the lobby-player to the game-player
             //just subclass "LobbyHook" and add it to the lobby object.
-
             if (_lobbyHooks)
                 _lobbyHooks.OnLobbyServerSceneLoadedForPlayer(this, lobbyPlayer, gamePlayer);
 
@@ -378,12 +377,14 @@ namespace Prototype.NetworkLobby
 					allready &= lobbySlots[i].readyToBegin;
 			}
 
-			if(allready)
-				StartCoroutine(ServerCountdownCoroutine());
+			if (allready) {
+				StartCoroutine (ServerCountdownCoroutine ());
+			}
         }
 
         public IEnumerator ServerCountdownCoroutine()
         {
+			_playerNumber = 0;
             float remainingTime = prematchCountdown;
             int floorTime = Mathf.FloorToInt(remainingTime);
 
@@ -413,6 +414,7 @@ namespace Prototype.NetworkLobby
                 if (lobbySlots[i] != null)
                 {
                     (lobbySlots[i] as LobbyPlayer).RpcUpdateCountdown(0);
+					++_playerNumber;
                 }
             }
 

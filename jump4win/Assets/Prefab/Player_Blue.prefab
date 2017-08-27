@@ -86,14 +86,14 @@ GameObject:
   - component: {fileID: 33804561961344870}
   - component: {fileID: 65195267050222360}
   - component: {fileID: 23779658201817926}
+  - component: {fileID: 54886886509404684}
   - component: {fileID: 143289836588409454}
   - component: {fileID: 114282578219078550}
-  - component: {fileID: 54886886509404684}
   - component: {fileID: 114386563616175408}
   - component: {fileID: 114942573386575500}
-  - component: {fileID: 114841487449280430}
   - component: {fileID: 114628354631167278}
   - component: {fileID: 114508585114432814}
+  - component: {fileID: 114841487449280430}
   m_Layer: 8
   m_Name: Player_Blue
   m_TagString: Player
@@ -178,10 +178,10 @@ MeshRenderer:
   m_GameObject: {fileID: 1760168906763006}
   m_Enabled: 1
   m_CastShadows: 1
-  m_ReceiveShadows: 1
+  m_ReceiveShadows: 0
   m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
+  m_LightProbeUsage: 0
+  m_ReflectionProbeUsage: 0
   m_Materials:
   - {fileID: 2100000, guid: 03d9f7d6c33f9f14c9cdd1e58decda55, type: 2}
   m_StaticBatchInfo:
@@ -288,7 +288,7 @@ Light:
   m_RenderMode: 0
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 4294967039
   m_Lightmapping: 4
   m_AreaSize: {x: 1, y: 1}
   m_BounceIntensity: 1
@@ -383,16 +383,16 @@ MonoBehaviour:
   m_Script: {fileID: -1768714887, guid: dc443db3e92b4983b9738c1131f555cb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_TransformSyncMode: 4
+  m_TransformSyncMode: 1
   m_SendInterval: 0.033333335
   m_SyncRotationAxis: 2
   m_RotationSyncCompression: 2
   m_SyncSpin: 0
   m_MovementTheshold: 0.001
   m_VelocityThreshold: 0.0001
-  m_SnapThreshold: 5
+  m_SnapThreshold: 1
   m_InterpolateRotation: 15
-  m_InterpolateMovement: 1
+  m_InterpolateMovement: 0.001
 --- !u!114 &114841487449280430
 MonoBehaviour:
   m_ObjectHideFlags: 1

@@ -23,6 +23,8 @@ public class smoothPlayerController_NET : NetworkBehaviour {
 	public bool reachedApex;
 	bool dragged;
 
+	private float platformSpd = 5f;
+
 	Transform cameraT;
 	CharacterController controller;
 
@@ -148,4 +150,56 @@ public class smoothPlayerController_NET : NetworkBehaviour {
 			dragged = false;
 		}	
 	}
+
+	void OnCollisionEnter(Collision col)
+	{
+		if(col.gameObject.CompareTag("Platform"))
+		{
+			if(col.gameObject.GetComponent<PlatformLoop> ().isRight)
+			{
+				Debug.Log ("Playercollided, MoveRight");
+				forcedMove (new Vector3(1, 0, 0) * platformSpd * Time.deltaTime);
+			}
+			else if(col.gameObject.GetComponent<PlatformLoop> ().isLeft)
+			{
+				Debug.Log ("Playercollided, MoveLeft");
+				forcedMove (new Vector3(-1, 0, 0) * platformSpd * Time.deltaTime);
+			}
+		}
+	}
+
+	void OnCollisionStay(Collision col)
+	{
+		if(col.gameObject.CompareTag("Platform"))
+		{
+			if(col.gameObject.GetComponent<PlatformLoop> ().isRight)
+			{
+				Debug.Log ("Playercollided, MoveRight");
+				forcedMove (new Vector3(1, 0, 0) * platformSpd * Time.deltaTime);
+			}
+			else if(col.gameObject.GetComponent<PlatformLoop> ().isLeft)
+			{
+				Debug.Log ("Playercollided, MoveLeft");
+				forcedMove (new Vector3(-1, 0, 0) * platformSpd * Time.deltaTime);
+			}
+		}
+	}
+
+	void OnCollisionExit(Collision col)
+	{
+		if(col.gameObject.CompareTag("Platform"))
+		{
+			if(col.gameObject.GetComponent<PlatformLoop> ().isRight)
+			{
+				Debug.Log ("Playercollided, MoveRight");
+				forcedMove (new Vector3(1, 0, 0) * platformSpd * Time.deltaTime);
+			}
+			else if(col.gameObject.GetComponent<PlatformLoop> ().isLeft)
+			{
+				Debug.Log ("Playercollided, MoveLeft");
+				forcedMove (new Vector3(-1, 0, 0) * platformSpd * Time.deltaTime);
+			}
+		}
+	}
 }
+

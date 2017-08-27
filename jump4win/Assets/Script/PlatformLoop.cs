@@ -1,11 +1,12 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Networking;
 
 [RequireComponent(typeof(Transform))]
 [RequireComponent(typeof(Transform))]
 
-public class PlatformLoop : MonoBehaviour {
+public class PlatformLoop : NetworkBehaviour {
 
 	public Transform BottomLeft;
 	public Transform TopRight;
@@ -71,6 +72,7 @@ public class PlatformLoop : MonoBehaviour {
 		}
 	}
 
+
 	void MoveRight(){
 		tr.Translate (spd * Time.deltaTime, 0f, 0f);	
 		//tr.position = Vector3.MoveTowards(tr.position, TopRight.position, spd * Time.deltaTime);
@@ -88,22 +90,54 @@ public class PlatformLoop : MonoBehaviour {
 		tr.Translate (0f, -spd * Time.deltaTime, 0f);	
 	}
 
-	void OnCollisionEnter(Collision col){Debug.Log ("CollisionSTart");}
-
-	void OnCollisionStay(Collision col)
-	{
-		if(col.gameObject.CompareTag("Player"))
-		{
-			if(isRight)
-			{
-				Debug.Log ("Playercollided, MoveRight");
-				col.gameObject.GetComponent<smoothPlayerController_NET> ().forcedMove (new Vector3(1, 0, 0) * spd * Time.deltaTime);
-			}
-			else if(isLeft)
-			{
-				Debug.Log ("Playercollided, MoveLeft");
-				col.gameObject.GetComponent<smoothPlayerController_NET> ().forcedMove (new Vector3(-1, 0, 0) * spd * Time.deltaTime);
-			}
-		}
-	}
+//	void OnCollisionEnter(Collision col)
+//	{
+//		if(col.gameObject.CompareTag("Player"))
+//		{
+//			if(isRight)
+//			{
+//				Debug.Log ("Playercollided, MoveRight");
+//				col.gameObject.GetComponent<smoothPlayerController_NET> ().forcedMove (new Vector3(1, 0, 0) * spd * Time.deltaTime);
+//			}
+//			else if(isLeft)
+//			{
+//				Debug.Log ("Playercollided, MoveLeft");
+//				col.gameObject.GetComponent<smoothPlayerController_NET> ().forcedMove (new Vector3(-1, 0, 0) * spd * Time.deltaTime);
+//			}
+//		}
+//	}
+//
+//	void OnCollisionStay(Collision col)
+//	{
+//		if(col.gameObject.CompareTag("Player"))
+//		{
+//			if(isRight)
+//			{
+//				Debug.Log ("Playercollided, MoveRight");
+//				col.gameObject.GetComponent<smoothPlayerController_NET> ().forcedMove (new Vector3(1, 0, 0) * spd * Time.deltaTime);
+//			}
+//			else if(isLeft)
+//			{
+//				Debug.Log ("Playercollided, MoveLeft");
+//				col.gameObject.GetComponent<smoothPlayerController_NET> ().forcedMove (new Vector3(-1, 0, 0) * spd * Time.deltaTime);
+//			}
+//		}
+//	}
+//
+//	void OnCollisionExit(Collision col)
+//	{
+//		if(col.gameObject.CompareTag("Player"))
+//		{
+//			if(isRight)
+//			{
+//				Debug.Log ("Playercollided, MoveRight");
+//				col.gameObject.GetComponent<smoothPlayerController_NET> ().forcedMove (new Vector3(1, 0, 0) * spd * Time.deltaTime);
+//			}
+//			else if(isLeft)
+//			{
+//				Debug.Log ("Playercollided, MoveLeft");
+//				col.gameObject.GetComponent<smoothPlayerController_NET> ().forcedMove (new Vector3(-1, 0, 0) * spd * Time.deltaTime);
+//			}
+//		}
+//	}
 }

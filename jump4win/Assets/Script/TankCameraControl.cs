@@ -16,7 +16,8 @@ public class TankCameraControl : MonoBehaviour
 	private Vector3 m_DesiredPosition;              // The position the camera is moving towards.
 
 	private int focusvalue = 5;
-
+	public int compensateValue = 30;
+	public int xmodifier = -5;
 	private GameObject[] gb;
 
 	private void Awake ()
@@ -27,7 +28,7 @@ public class TankCameraControl : MonoBehaviour
 	// Wait for all players in Scene
 	IEnumerator Start()
 	{
-		yield return new WaitForSeconds (.5f);
+		yield return new WaitForSeconds (2f);
 
 		gb = GameObject.FindGameObjectsWithTag ("Player");
 
@@ -92,8 +93,8 @@ public class TankCameraControl : MonoBehaviour
 
 		// Keep the same y value.
 		averagePos.y = transform.position.y;
-		averagePos.x -= 35;
-		averagePos.z -= 35;
+		averagePos.x -= (compensateValue + xmodifier);
+		averagePos.z -= compensateValue;
 		// The desired position is the average position;
 		m_DesiredPosition = averagePos;
 	}

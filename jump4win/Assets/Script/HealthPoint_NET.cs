@@ -9,6 +9,15 @@ public class HealthPoint_NET : NetworkBehaviour {
 	public int hp = 2;
 	public bool isDead;
 
+	private Renderer m_renderer;
+	private BoxCollider m_collider;
+
+	void Start()
+	{
+		m_renderer = GetComponent<Renderer> ();
+		m_collider = GetComponent<BoxCollider> ();
+	}
+
 	public void getDamaged(int damage){
 		if (!isServer || hp <= 0)
 			return;
@@ -29,7 +38,9 @@ public class HealthPoint_NET : NetworkBehaviour {
 	{
 		Debug.Log (gameObject.transform.name + " Dead");
 		isDead = true;
-		gameObject.transform.gameObject.SetActive (false);
+		m_collider.enabled = false;
+		m_renderer.enabled = false;
+
 		/*
 		if(isLocalPlayer){
 			infoText.text = "Game Over!";

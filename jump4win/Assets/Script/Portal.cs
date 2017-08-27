@@ -8,7 +8,7 @@ public class Portal : MonoBehaviour {
 
 	void OnTriggerEnter(Collider col){
 		if(col.gameObject.CompareTag("Player")){
-			col.gameObject.transform.position = destination.position;
+			col.gameObject.transform.position = destination.position + new Vector3 (1, 0, 1);
 		}
 	}
 }

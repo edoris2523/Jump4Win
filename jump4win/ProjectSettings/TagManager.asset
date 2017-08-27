@@ -15,6 +15,7 @@ TagManager:
   - Ground
   - Fire
   - Text
+  - Platform
   layers:
   - Default
   - TransparentFX
