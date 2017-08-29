@@ -29,7 +29,6 @@ public class HealthPoint_NET : NetworkBehaviour {
 			hp = 0;
 			RpcDied ();
 			isDead = true;
-			gameObject.transform.gameObject.SetActive (false);
 		}
 	}
 

@@ -3912,11 +3912,6 @@ Prefab:
       propertyPath: m_messageText
       value: 
       objectReference: {fileID: 1714876552}
-    - target: {fileID: 114163460375029162, guid: 23433065f3fe1b14e8169b6345fd75d7,
-        type: 2}
-      propertyPath: m_ServerOnly
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 23433065f3fe1b14e8169b6345fd75d7, type: 2}
   m_IsPrefabParent: 0
@@ -12483,6 +12478,10 @@ Prefab:
         type: 2}
       propertyPath: orthographic size
       value: 23
+      objectReference: {fileID: 0}
+    - target: {fileID: 1184383312838966, guid: efaef0162e6973942871064daf9a6b42, type: 2}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: efaef0162e6973942871064daf9a6b42, type: 2}

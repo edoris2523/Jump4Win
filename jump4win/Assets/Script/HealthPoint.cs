@@ -20,7 +20,7 @@ public class HealthPoint : MonoBehaviour {
 		if(hp <= 0){
 			Debug.Log (gameObject.transform.name + " Dead");
 			isDead = true;
-			gameObject.transform.gameObject.SetActive (false);
+			//gameObject.transform.gameObject.SetActive (false);
 		}
 	}
 }

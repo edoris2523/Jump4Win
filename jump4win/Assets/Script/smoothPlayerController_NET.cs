@@ -30,6 +30,11 @@ public class smoothPlayerController_NET : NetworkBehaviour {
 	Transform cameraT;
 	CharacterController controller;
 
+	void Awake()
+	{
+		DontDestroyOnLoad (gameObject);
+	}
+
 	// Use this for initialization
 	void Start () {
 		if(!isLocalPlayer){

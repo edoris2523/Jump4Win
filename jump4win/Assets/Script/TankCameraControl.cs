@@ -23,12 +23,13 @@ public class TankCameraControl : MonoBehaviour
 	private void Awake ()
 	{
 		m_Camera = GetComponentInChildren<Camera> ();
+		DontDestroyOnLoad (gameObject);
 	}
 
 	// Wait for all players in Scene
 	IEnumerator Start()
 	{
-		yield return new WaitForSeconds (2f);
+		yield return new WaitForSeconds (1f);
 
 		gb = GameObject.FindGameObjectsWithTag ("Player");
 
@@ -77,7 +78,8 @@ public class TankCameraControl : MonoBehaviour
 				continue;
 
 			// Add to the average and increment the number of targets in the average.
-			averagePos += m_Targets[i].position;
+			if(!m_Targets[i].GetComponent<HealthPoint_NET>().isDead)
+				averagePos += m_Targets[i].position;
 			if(i == 0)
 			{
 				averagePos += m_Targets [i].position * focusvalue;

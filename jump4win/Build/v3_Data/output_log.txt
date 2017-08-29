@@ -21,16 +21,16 @@ Platform assembly: D:\Documents\GitHub\Jump4Win\jump4win\Build\v3_Data\Managed\U
 Loading D:\Documents\GitHub\Jump4Win\jump4win\Build\v3_Data\Managed\UnityEngine.Timeline.dll into Unity Child Domain
 Platform assembly: D:\Documents\GitHub\Jump4Win\jump4win\Build\v3_Data\Managed\System.dll (this message is harmless)
 Platform assembly: D:\Documents\GitHub\Jump4Win\jump4win\Build\v3_Data\Managed\System.Core.dll (this message is harmless)
-- Completed reload, in  0.091 seconds
+- Completed reload, in  0.031 seconds
 <RI> Initializing input.
 <RI> Input initialized.
 <RI> Initialized touch support.
-UnloadTime: 2.404743 ms
+UnloadTime: 3.059756 ms
 Setting up 4 worker threads for Enlighten.
-  Thread -> id: 784 -> priority: 1 
-  Thread -> id: 3a28 -> priority: 1 
-  Thread -> id: 330 -> priority: 1 
-  Thread -> id: 38f4 -> priority: 1 
+  Thread -> id: 2dd8 -> priority: 1 
+  Thread -> id: 43ec -> priority: 1 
+  Thread -> id: 3204 -> priority: 1 
+  Thread -> id: 3574 -> priority: 1 
 MatchMakingClient ListMatches :https://mm.unet.unity3d.com/json/reply/ListMatchRequest
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
@@ -47,17 +47,65 @@ DontDestroyOnLoad only work for root GameObjects or components on root GameObjec
  
 (Filename:  Line: 481)
 
-Trying to send command for object without authority.
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+Unloading 5 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 2.094224 ms
 
-Unloading 6 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 1.731557 ms
-
-Unloading 7 unused Assets to reduce memory usage. Loaded Objects now: 2151.
-Total: 3.993683 ms (FindLiveObjects: 0.873087 ms CreateObjectMapping: 0.195160 ms MarkObjects: 2.758324 ms  DeleteObjects: 0.165135 ms)
+Unloading 7 unused Assets to reduce memory usage. Loaded Objects now: 2760.
+Total: 6.238427 ms (FindLiveObjects: 0.316839 ms CreateObjectMapping: 0.082567 ms MarkObjects: 5.058771 ms  DeleteObjects: 0.778667 ms)
 
 [Server] function 'System.Void GameManager::Start()' called on client
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+I'm Player_Yellow(Clone)I'm get damaged
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+I'm Player_Yellow(Clone)I'm get damaged
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Player_Yellow(Clone) Dead
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Unloading 5 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 2.553286 ms
+
+Unloading 23 unused Assets to reduce memory usage. Loaded Objects now: 2216.
+Total: 1.791607 ms (FindLiveObjects: 0.140642 ms CreateObjectMapping: 0.043061 ms MarkObjects: 1.417483 ms  DeleteObjects: 0.190024 ms)
+
+Unloading 5 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 1.044939 ms
+
+Unloading 5 unused Assets to reduce memory usage. Loaded Objects now: 2216.
+Total: 1.848100 ms (FindLiveObjects: 0.229531 ms CreateObjectMapping: 0.048197 ms MarkObjects: 1.550619 ms  DeleteObjects: 0.018962 ms)
+
+[Server] function 'System.Void GameManager::Start()' called on client
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Player_Pink(Clone) Dead
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+I'm Player_Pink(Clone)I'm get damaged
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Can't find attached charactercontroller_NET
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Unloading 6 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 1.304100 ms
+
+Unloading 12 unused Assets to reduce memory usage. Loaded Objects now: 1379.
+Total: 2.995756 ms (FindLiveObjects: 0.183308 ms CreateObjectMapping: 0.050172 ms MarkObjects: 2.462422 ms  DeleteObjects: 0.298271 ms)
+
+Unloading 6 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 1.525730 ms
+
+Unloading 1 unused Assets to reduce memory usage. Loaded Objects now: 1379.
+Total: 3.280991 ms (FindLiveObjects: 0.507654 ms CreateObjectMapping: 0.253234 ms MarkObjects: 2.510225 ms  DeleteObjects: 0.009086 ms)
 

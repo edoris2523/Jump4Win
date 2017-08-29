@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.Networking;
+using UnityEngine.SceneManagement;
 
 public class GameManager : NetworkBehaviour {
 
@@ -74,7 +75,6 @@ public class GameManager : NetworkBehaviour {
 		if (lobbyManager != null)
 		{
 			m_allPlayers = GameObject.FindGameObjectsWithTag ("Player");
-
 			while (m_allPlayers.GetLength(0) < lobbyManager._playerNumber)
 			{
 				Debug.Log ("PlayerNumber " + lobbyManager._playerNumber.ToString());
@@ -83,6 +83,7 @@ public class GameManager : NetworkBehaviour {
 			}
 				
 			yield return new WaitForSeconds (0.5f);
+
 			// Map Setting
 			//yield return new WaitForSeconds(1.0f);
 			yield return StartCoroutine("StartGame");
@@ -106,20 +107,35 @@ public class GameManager : NetworkBehaviour {
 	{
 		Debug.Log ("StartGame Begin");
 
+		RpcEnablePlayers ();
+
 		RpcUpdateMessage ("3");
 		yield return new WaitForSeconds (1f);
+		RpcEnablePlayers ();
+
 		RpcUpdateMessage ("2");
 		yield return new WaitForSeconds (1f);
+		RpcEnablePlayers ();
+
 		RpcUpdateMessage ("1");
 		yield return new WaitForSeconds (1f);
+		RpcEnablePlayers ();
 
 		RpcStartGame();
 		UpdateScoreboard();
 	}
 
-	void deactivatePlayers()
+	[ClientRpc]
+	void RpcEnablePlayers()
 	{
-		
+		m_allPlayers = GameObject.FindGameObjectsWithTag ("Player");
+		for(int i = 0; i < m_allPlayers.GetLength(0); ++i)
+		{
+			m_allPlayers [i].GetComponent<Collider>().enabled = true;
+			m_allPlayers [i].GetComponent<Renderer>().enabled = true;
+			m_allPlayers [i].GetComponent<HealthPoint_NET> ().hp = 1;
+			m_allPlayers [i].GetComponent<HealthPoint_NET> ().isDead = false;
+		}
 	}
 
 	[ClientRpc]
@@ -146,7 +162,22 @@ public class GameManager : NetworkBehaviour {
 	[ClientRpc]
 	void RpcEndGame()
 	{
-		FindObjectOfType<NetworkLobbyManager> ().ServerReturnToLobby ();
+		m_gameEnd = false;
+
+		if(SceneManager.GetActiveScene().name == "Map01_NET")
+		{
+			FindObjectOfType<NetworkLobbyManager> ().ServerChangeScene ("Map02_NET");
+		}
+
+		else if(SceneManager.GetActiveScene().name == "Map02_NET")
+		{
+			FindObjectOfType<NetworkLobbyManager> ().ServerChangeScene ("Map03_NET");
+		}
+		else
+		{
+			FindObjectOfType<NetworkLobbyManager> ().ServerReturnToLobby ();
+		}
+
 	}
 
 	IEnumerator EndGame()
