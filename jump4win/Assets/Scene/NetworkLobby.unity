@@ -4882,7 +4882,7 @@ MonoBehaviour:
   m_GamePlayerPrefab: {fileID: 1255077489246276, guid: 95546467e8854e34093ba2a99b24442a,
     type: 2}
   m_LobbyScene: NetworkLobby
-  m_PlayScene: Gameplay_MatchMaking
+  m_PlayScene: Gameplay_MatchMaking2
   lobbySlots: []
   prematchCountdown: 3
   topPanel: {fileID: 1517214960}

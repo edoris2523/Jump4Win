@@ -25,6 +25,8 @@ public class smoothPlayerController_NET : NetworkBehaviour {
 
 	private float platformSpd = 5f;
 
+	AudioPlayer_NET audioPlayer;
+
 	Transform cameraT;
 	CharacterController controller;
 
@@ -36,6 +38,7 @@ public class smoothPlayerController_NET : NetworkBehaviour {
 		}
 		cameraT = Camera.main.transform;
 		controller = GetComponent<CharacterController> ();
+		audioPlayer = GetComponent<AudioPlayer_NET> ();
 	}
 
 	// Update is called once per frame
@@ -95,14 +98,15 @@ public class smoothPlayerController_NET : NetworkBehaviour {
 
 		transform.Translate (tureVelocity, Space.World);
 	}
-
+		
 	void Jump(){
 		if(controller.isGrounded){
+			audioPlayer.CmdPlayJumpSound ();
 			float jumpVelocity = Mathf.Sqrt (-2 * gravity * jumpHeight);
 			velocityY = jumpVelocity;
 		}
 	}
-
+		
 	public void forcedJump(){
 		float jumpVelocity = Mathf.Sqrt (-2 * gravity * jumpHeight * 3);
 		velocityY = jumpVelocity;

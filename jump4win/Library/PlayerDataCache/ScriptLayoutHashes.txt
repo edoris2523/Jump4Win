@@ -192,3 +192,5 @@ bac9c349968f9148c230afc9dde06e83 Assembly-CSharp.dll:.BangBang
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.marioCameraController
 239d2cc8d353bbfcbefc27fa8f0221cc Assembly-CSharp.dll:Prototype.NetworkLobby.LobbyServerList
 0f3d4bb7128a287827d041c696039525 Assembly-CSharp-firstpass.dll:UnityStandardAssets.Utility.AutoMobileShaderSwitch
+45b3dbd5d5948f4c0f23408cbff88a04 Assembly-CSharp.dll:.AudioPlayer
+45b3dbd5d5948f4c0f23408cbff88a04 Assembly-CSharp.dll:.AudioPlayer_NET

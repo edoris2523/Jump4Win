@@ -21,16 +21,16 @@ Platform assembly: D:\Documents\GitHub\Jump4Win\jump4win\Build\v3_Data\Managed\U
 Loading D:\Documents\GitHub\Jump4Win\jump4win\Build\v3_Data\Managed\UnityEngine.Timeline.dll into Unity Child Domain
 Platform assembly: D:\Documents\GitHub\Jump4Win\jump4win\Build\v3_Data\Managed\System.dll (this message is harmless)
 Platform assembly: D:\Documents\GitHub\Jump4Win\jump4win\Build\v3_Data\Managed\System.Core.dll (this message is harmless)
-- Completed reload, in  0.025 seconds
+- Completed reload, in  0.091 seconds
 <RI> Initializing input.
 <RI> Input initialized.
 <RI> Initialized touch support.
-UnloadTime: 3.177880 ms
+UnloadTime: 2.404743 ms
 Setting up 4 worker threads for Enlighten.
-  Thread -> id: 242c -> priority: 1 
-  Thread -> id: 269c -> priority: 1 
-  Thread -> id: 2d94 -> priority: 1 
-  Thread -> id: 1258 -> priority: 1 
+  Thread -> id: 784 -> priority: 1 
+  Thread -> id: 3a28 -> priority: 1 
+  Thread -> id: 330 -> priority: 1 
+  Thread -> id: 38f4 -> priority: 1 
 MatchMakingClient ListMatches :https://mm.unet.unity3d.com/json/reply/ListMatchRequest
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
@@ -51,37 +51,13 @@ Trying to send command for object without authority.
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-Unloading 5 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 4.427462 ms
+Unloading 6 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 1.731557 ms
 
-Unloading 7 unused Assets to reduce memory usage. Loaded Objects now: 2494.
-Total: 5.965439 ms (FindLiveObjects: 0.580346 ms CreateObjectMapping: 0.174222 ms MarkObjects: 4.889289 ms  DeleteObjects: 0.318025 ms)
+Unloading 7 unused Assets to reduce memory usage. Loaded Objects now: 2151.
+Total: 3.993683 ms (FindLiveObjects: 0.873087 ms CreateObjectMapping: 0.195160 ms MarkObjects: 2.758324 ms  DeleteObjects: 0.165135 ms)
 
 [Server] function 'System.Void GameManager::Start()' called on client
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-Try HighJump
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-Try HighJump
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-Try HighJump
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-Try HighJump
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-Try HighJump
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-Try HighJump
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 

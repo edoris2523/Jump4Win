@@ -22,6 +22,8 @@ public class smoothPlayerController : MonoBehaviour {
 	public bool reachedApex;
 	bool dragged;
 
+	AudioPlayer audioPlayer;
+
 	Transform cameraT;
 	CharacterController controller;
 
@@ -29,6 +31,7 @@ public class smoothPlayerController : MonoBehaviour {
 	void Start () {
 		cameraT = Camera.main.transform;
 		controller = GetComponent<CharacterController> ();
+		audioPlayer = GetComponent<AudioPlayer> ();
 	}
 	
 	// Update is called once per frame
@@ -91,6 +94,7 @@ public class smoothPlayerController : MonoBehaviour {
 
 	void Jump(){
 		if(controller.isGrounded){
+			audioPlayer.PlayJumpSound ();
 			float jumpVelocity = Mathf.Sqrt (-2 * gravity * jumpHeight);
 			velocityY = jumpVelocity;
 		}
