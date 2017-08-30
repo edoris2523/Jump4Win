@@ -24,6 +24,8 @@ public class GameManager : NetworkBehaviour {
 
 	public static int m_selectedMap = 0;
 
+	public Transform[] spawnPoints;
+
 	public static GameManager Instance
 	{
 		get
@@ -131,10 +133,13 @@ public class GameManager : NetworkBehaviour {
 		m_allPlayers = GameObject.FindGameObjectsWithTag ("Player");
 		for(int i = 0; i < m_allPlayers.GetLength(0); ++i)
 		{
+			m_allPlayers [i].transform.transform.SetPositionAndRotation (spawnPoints[i].position, spawnPoints[i].rotation);
 			m_allPlayers [i].GetComponent<Collider>().enabled = true;
 			m_allPlayers [i].GetComponent<Renderer>().enabled = true;
 			m_allPlayers [i].GetComponent<HealthPoint_NET> ().hp = 1;
 			m_allPlayers [i].GetComponent<HealthPoint_NET> ().isDead = false;
+			m_allPlayers [i].transform.GetChild (1).gameObject.SetActive (true);
+			m_allPlayers [i].transform.GetChild (2).gameObject.SetActive (true);
 		}
 	}
 

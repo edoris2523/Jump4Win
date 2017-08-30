@@ -110,7 +110,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1217360916084178}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.5, z: -20.98}
+  m_LocalPosition: {x: 15.89, y: 1.616, z: 17.31}
   m_LocalScale: {x: 1, y: 3, z: 1}
   m_Children:
   - {fileID: 4048898297025742}
@@ -127,7 +127,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1433861160895760}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: -0.4, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4016562505184074}
@@ -166,7 +166,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1922695013648090}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0.4, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4016562505184074}
@@ -182,8 +182,8 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 0
   m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
+  m_LightProbeUsage: 0
+  m_ReflectionProbeUsage: 0
   m_Materials:
   - {fileID: 2100000, guid: 865bb81dcf962574c904152829d50da9, type: 2}
   m_StaticBatchInfo:
@@ -248,8 +248,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.95, y: 0.025, z: 0.95}
-  m_Center: {x: 0, y: 0.5, z: 0}
+  m_Size: {x: 1, y: 0.4, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!65 &65780706752882844
 BoxCollider:
   m_ObjectHideFlags: 1
@@ -260,8 +260,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.95, y: 0.1, z: 0.95}
-  m_Center: {x: 0, y: -0.55, z: 0}
+  m_Size: {x: 1, y: 0.4, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!82 &82970703474745590
 AudioSource:
   m_ObjectHideFlags: 1
@@ -500,10 +500,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   jumpSound:
-  - {fileID: 8300000, guid: 7b31f24b4c87f644ba4b91a3158d67a2, type: 3}
-  - {fileID: 8300000, guid: d206b995b8fa3d842bbc0a679a84e431, type: 3}
-  - {fileID: 8300000, guid: 09d710e5ccc7d0f4cb4879891f5a4d55, type: 3}
-  - {fileID: 8300000, guid: f4051492c31f5334d9a5f55b5c3abed0, type: 3}
+  - {fileID: 8300000, guid: 40b4771279852d34892307c89766c628, type: 3}
+  - {fileID: 8300000, guid: 51422b7373ac1e24d95398079b55f31d, type: 3}
+  - {fileID: 8300000, guid: 27b99e8b73a047f4295a9f54306e340a, type: 3}
+  - {fileID: 8300000, guid: a9b45ffd5af08824b892f47d65549e6b, type: 3}
 --- !u!114 &114807300722884836
 MonoBehaviour:
   m_ObjectHideFlags: 1

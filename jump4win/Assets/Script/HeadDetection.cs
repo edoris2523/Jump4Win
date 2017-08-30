@@ -18,7 +18,7 @@ public class HeadDetection : MonoBehaviour {
 	void OnTriggerEnter(Collider col){
 		if(col.gameObject.tag == "Player_Foot" || col.gameObject.tag == "Enemy_Foot"){
 			Debug.Log ("I'm " + gameObject.transform.parent.name + "I'm get damaged");
-			hp_Net.getDamaged (1);
+			hp_Net.RpcGetDamaged (1);
 
 			if (charCntrlr = col.gameObject.GetComponentInParent<smoothPlayerController> ()) 
 			{
@@ -45,6 +45,13 @@ public class HeadDetection : MonoBehaviour {
 			{
 				Debug.Log ("Can't find attached charactercontroller_NET");
 			}	
+		}
+
+		// Head is collided with Platform or Something else.
+		else
+		{
+			if(gameObject.CompareTag("Player_Head"))
+				gameObject.GetComponentInParent<smoothPlayerController_NET> ().reachedApex = true;
 		}
 	}
 }

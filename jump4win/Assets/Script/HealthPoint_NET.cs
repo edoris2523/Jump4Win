@@ -11,6 +11,8 @@ public class HealthPoint_NET : NetworkBehaviour {
 
 	private Renderer m_renderer;
 	private BoxCollider m_collider;
+	private GameObject foot;
+	private GameObject head;
 
 	void Start()
 	{
@@ -18,14 +20,20 @@ public class HealthPoint_NET : NetworkBehaviour {
 		m_collider = GetComponent<BoxCollider> ();
 	}
 
-	public void getDamaged(int damage){
+	void Update()
+	{
+		if (gameObject.transform.position.y < -5f)
+			RpcDied ();
+	}
+
+	[ClientRpc]
+	public void RpcGetDamaged(int damage){
 		if (!isServer || hp <= 0)
 			return;
 
 		hp -= damage;
 		if(hp <= 0)
 		{
-			Debug.Log (gameObject.transform.name + " Dead");
 			hp = 0;
 			RpcDied ();
 			isDead = true;
@@ -39,6 +47,10 @@ public class HealthPoint_NET : NetworkBehaviour {
 		isDead = true;
 		m_collider.enabled = false;
 		m_renderer.enabled = false;
+
+		// head, foot deactive
+		transform.GetChild (1).gameObject.SetActive (false);
+		transform.GetChild (2).gameObject.SetActive (false);
 
 		/*
 		if(isLocalPlayer){

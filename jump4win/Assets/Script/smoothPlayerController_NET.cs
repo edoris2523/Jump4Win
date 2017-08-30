@@ -21,13 +21,12 @@ public class smoothPlayerController_NET : NetworkBehaviour {
 	float velocityY;
 
 	public bool reachedApex;
-	bool dragged;
 
 	private float platformSpd = 5f;
 
 	AudioPlayer_NET audioPlayer;
 
-	Transform cameraT;
+	//Transform cameraT;
 	CharacterController controller;
 
 	void Awake()
@@ -41,7 +40,7 @@ public class smoothPlayerController_NET : NetworkBehaviour {
 			Destroy (this);
 			return;
 		}
-		cameraT = Camera.main.transform;
+		//cameraT = Camera.main.transform;
 		controller = GetComponent<CharacterController> ();
 		audioPlayer = GetComponent<AudioPlayer_NET> ();
 	}
@@ -65,7 +64,8 @@ public class smoothPlayerController_NET : NetworkBehaviour {
 
 	void Move(Vector2 inputDir, bool running){
 		if (inputDir != Vector2.zero) {
-			float targetRotation = Mathf.Atan2 (inputDir.x, inputDir.y) * Mathf.Rad2Deg + cameraT.eulerAngles.y;
+			//float targetRotation = Mathf.Atan2 (inputDir.x, inputDir.y) * Mathf.Rad2Deg + cameraT.eulerAngles.y;
+			float targetRotation = Mathf.Atan2 (inputDir.x, inputDir.y) * Mathf.Rad2Deg;
 			transform.eulerAngles = Vector3.up * Mathf.SmoothDampAngle(transform.eulerAngles.y, targetRotation, ref turnSmoothVelocity, GetModifiedSmoothTime(turnSmoothTime));
 		}
 
@@ -90,16 +90,16 @@ public class smoothPlayerController_NET : NetworkBehaviour {
 		if(controller.isGrounded){
 			velocityY = 0;
 			reachedApex = false;
-			turnSmoothTime = 0.05f;
+			turnSmoothTime = 0.01f;
 		} else{
 			turnSmoothTime = 0.1f;
 		}
 
 		Vector3 tureVelocity = transform.forward * targetSpeed * Time.deltaTime;
 
-		if (dragged) {
-			tureVelocity += new Vector3(9f, 0f, 0f) * Time.deltaTime;
-		} 
+//		if (dragged) {
+//			tureVelocity += new Vector3(9f, 0f, 0f) * Time.deltaTime;
+//		} 
 
 		transform.Translate (tureVelocity, Space.World);
 	}
@@ -124,7 +124,7 @@ public class smoothPlayerController_NET : NetworkBehaviour {
 	}
 
 	void Dragged(){
-		controller.Move (new Vector3(1f, 0f, 0f) * 70 * Time.deltaTime);
+		controller.Move (new Vector3(1f, 0f, 0f) * 1.5f * Time.deltaTime);
 	}
 
 	public void forcedMove(Vector3 dir)
@@ -146,7 +146,7 @@ public class smoothPlayerController_NET : NetworkBehaviour {
 
 	void OnTriggerEnter(Collider col){
 		if(col.gameObject.tag == "Belt"){
-			dragged = true;
+			Dragged ();
 		}
 		if(col.gameObject.tag == "BangBang"){
 			forcedHighJump ();
@@ -154,10 +154,10 @@ public class smoothPlayerController_NET : NetworkBehaviour {
 
 	}
 
-	void OnTriggerExit(Collider col){
+	void OnTriggerStay(Collider col){
 		if(col.gameObject.tag == "Belt"){
-			dragged = false;
-		}	
+			Dragged ();
+		}
 	}
 
 	void OnCollisionEnter(Collision col)

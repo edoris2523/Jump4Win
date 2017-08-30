@@ -23,7 +23,6 @@ public class TankCameraControl : MonoBehaviour
 	private void Awake ()
 	{
 		m_Camera = GetComponentInChildren<Camera> ();
-		DontDestroyOnLoad (gameObject);
 	}
 
 	// Wait for all players in Scene

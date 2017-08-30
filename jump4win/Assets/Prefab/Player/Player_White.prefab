@@ -123,7 +123,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1839607226618226}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0.4, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4900708137560148}
@@ -149,7 +149,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1192739908105940}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: -0.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4900708137560148}
@@ -162,7 +162,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1255077489246276}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -12.7, y: 0.5, z: -21.53}
+  m_LocalPosition: {x: -26.72, y: 0.5, z: -21.53}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4497143573624272}
@@ -182,8 +182,8 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 0
   m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
+  m_LightProbeUsage: 0
+  m_ReflectionProbeUsage: 0
   m_Materials:
   - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
   m_StaticBatchInfo:
@@ -236,8 +236,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.95, y: 0.05, z: 0.95}
-  m_Center: {x: 0, y: 0.51, z: 0}
+  m_Size: {x: 1, y: 0.5, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!65 &65643703068140948
 BoxCollider:
   m_ObjectHideFlags: 1
@@ -248,8 +248,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.95, y: 0.05, z: 0.95}
-  m_Center: {x: 0, y: -0.5, z: 0}
+  m_Size: {x: 1, y: 0.5, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!65 &65824529011767610
 BoxCollider:
   m_ObjectHideFlags: 1
@@ -489,10 +489,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   jumpSound:
-  - {fileID: 8300000, guid: 03fbad1ebdf4f05478d05ccacb3a9ae0, type: 3}
-  - {fileID: 8300000, guid: 9c55079da35fe3e4097580ab46602448, type: 3}
-  - {fileID: 8300000, guid: e6bd62a18372c244e9f51895d8b038a7, type: 3}
-  - {fileID: 8300000, guid: c27ab9b565bbaa346a90f5cffc4c8eda, type: 3}
+  - {fileID: 8300000, guid: aed319e59be58704083657805e18ec55, type: 3}
+  - {fileID: 8300000, guid: 22e135bb4e023e7419d86ae8dbdcb5fb, type: 3}
+  - {fileID: 8300000, guid: b5731531993715041a6c41b213a33e9e, type: 3}
+  - {fileID: 8300000, guid: 39c5b72beaff27441a71be48600124f0, type: 3}
 --- !u!114 &114889913794742328
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -525,7 +525,6 @@ MonoBehaviour:
   turnSmoothTime: 0.05
   speedSmoothTime: 0.1
   reachedApex: 0
-  jumpSound: {fileID: 0}
 --- !u!114 &114986939701642754
 MonoBehaviour:
   m_ObjectHideFlags: 1
