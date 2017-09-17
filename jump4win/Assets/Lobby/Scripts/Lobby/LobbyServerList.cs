@@ -56,7 +56,6 @@ namespace Prototype.NetworkLobby
 			for (int i = 0; i < matches.Count; ++i)
 			{
                 GameObject o = Instantiate(serverEntryPrefab) as GameObject;
-
 				o.GetComponent<LobbyServerEntry>().Populate(matches[i], lobbyManager, (i % 2 == 0) ? OddServerColor : EvenServerColor);
 
 				o.transform.SetParent(serverListRect, false);

@@ -4,10 +4,12 @@ using System.Collections.Generic;
 
 public class TankCameraControl : MonoBehaviour
 {
-	public float m_DampTime = 0.7f;                 // Approximate time for the camera to refocus.
+	public float m_DampTime = 0.5f;                 // Approximate time for the camera to refocus.
 	public float m_ScreenEdgeBuffer = 4f;           // Space between the top/bottom most target and the screen edge.
 	public float m_MinSize = 6.5f;                  // The smallest orthographic size the camera can be.
 	public List<Transform> m_Targets; // All the targets the camera needs to encompass.
+
+	public Transform debugobjcet;
 
 
 	private Camera m_Camera;                        // Used for referencing the camera.
@@ -47,6 +49,7 @@ public class TankCameraControl : MonoBehaviour
 
 		// Change the size of the camera based.
 		Zoom ();
+		debugobjcet.position = m_DesiredPosition;
 	}
 
 
@@ -77,20 +80,14 @@ public class TankCameraControl : MonoBehaviour
 				continue;
 
 			// Add to the average and increment the number of targets in the average.
-			if(!m_Targets[i].GetComponent<HealthPoint_NET>().isDead)
-				averagePos += m_Targets[i].position;
-			if(i == 0)
-			{
-				averagePos += m_Targets [i].position * focusvalue;
-				numTargets += focusvalue;
+			if (!m_Targets [i].GetComponent<HealthPoint_NET> ().isDead) {
+				averagePos += m_Targets [i].position;
 			}
-			numTargets++;
 		}
 			
-
 		// If there are targets divide the sum of the positions by the number of them to find the average.
-		if (numTargets > 0)
-			averagePos /= numTargets;
+		if (m_Targets.Count > 0)
+			averagePos /= m_Targets.Count;
 
 		// Keep the same y value.
 		averagePos.y = transform.position.y;

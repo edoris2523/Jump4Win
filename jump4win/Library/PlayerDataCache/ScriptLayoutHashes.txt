@@ -180,11 +180,12 @@ bc19791c587d8529aa117edd993d2482 Assembly-CSharp.dll:.Floating
 7458f713faa31d45b22e83bd1bb076c9 Assembly-CSharp.dll:.moveController
 db3b233e35a88802fed1717d19c3d9ec Assembly-CSharp-firstpass.dll:UnityStandardAssets.Utility.FollowTarget
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.Belt
-8313ac3ed82df34dc1ad2646ee58ad89 Assembly-CSharp.dll:.TankCameraControl
+a5b754b69e13dc91f0c8259457bc05dd Assembly-CSharp.dll:.TankCameraControl
 20a442b52accac74abac23d469e4681a Assembly-CSharp.dll:.PlayerController
 a8796ecdc9d5c260bbe32f30c4b10708 Assembly-CSharp-firstpass.dll:UnityStandardAssets.CrossPlatformInput.TouchPad
 0ad469aca31264c6140b1e503c43ab6b Assembly-CSharp-firstpass.dll:UnityStandardAssets.Utility.TimedObjectDestructor
 cb70dea97f3b0052152e4330b8d1a4b4 Assembly-CSharp.dll:.CameraController
+05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.touchxx
 47604e365e0745ab0c9fd9c7baccd69c Assembly-CSharp.dll:.smoothPlayerController
 bac9c349968f9148c230afc9dde06e83 Assembly-CSharp.dll:.BangBang
 581f34e3bbe61ce496d5c286cfb4d8e2 Assembly-CSharp.dll:.HealthPoint_NET

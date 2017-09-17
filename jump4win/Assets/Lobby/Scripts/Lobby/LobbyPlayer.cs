@@ -93,6 +93,43 @@ namespace Prototype.NetworkLobby
             readyButton.colors = b;
         }
 
+		void ChangePlayerCharButtonColor()
+		{
+			ColorBlock selected = readyButton.colors;
+			selected.highlightedColor = Color.yellow;
+
+			ColorBlock notselected = readyButton.colors;
+			notselected.highlightedColor = JoinColor;
+
+			switch(avatarIndex)
+			{
+			case 0:
+				p1Btn.colors = selected;
+				p2Btn.colors = notselected;
+				p3Btn.colors = notselected;
+				p4Btn.colors = notselected;
+				break;
+			case 1:
+				p1Btn.colors = notselected;
+				p2Btn.colors = selected;
+				p3Btn.colors = notselected;
+				p4Btn.colors = notselected;
+				break;
+			case 2:
+				p1Btn.colors = notselected;
+				p2Btn.colors = notselected;
+				p3Btn.colors = selected;
+				p4Btn.colors = notselected;
+				break;
+			case 3:
+				p1Btn.colors = notselected;
+				p2Btn.colors = notselected;
+				p3Btn.colors = notselected;
+				p4Btn.colors = selected;
+				break;
+			}
+		}
+
         void SetupOtherPlayer()
         {
             nameInput.interactable = false;
@@ -167,6 +204,8 @@ namespace Prototype.NetworkLobby
 				break;
 			}
 
+			ChangePlayerCharButtonColor ();
+
 			if (isServer)
 				RpcAvatarPicked (avatarIndex);
 			else
@@ -176,12 +215,14 @@ namespace Prototype.NetworkLobby
 		[ClientRpc]
 		public void RpcAvatarPicked (int avIndex)
 		{
+			ChangePlayerCharButtonColor ();
 			CmdAvatarPicked (avIndex);
 		}
 
 		[Command]
 		public void CmdAvatarPicked(int avIndex)
 		{
+			ChangePlayerCharButtonColor ();
 			LobbyManager.s_Singleton.SetPlayerTypeLobby (GetComponent<NetworkIdentity>().connectionToClient, avIndex);
 		}
 

@@ -56,9 +56,18 @@ namespace Prototype.NetworkLobby
 
         public void OnClickCreateMatchmakingGame()
         {
+			int numMatches;
+			if(lobbyManager.matches == null)
+			{
+				numMatches = 0;
+			}
+			else{
+				numMatches = lobbyManager.matches.Count;
+			}
             lobbyManager.StartMatchMaker();
             lobbyManager.matchMaker.CreateMatch(
-                matchNameInput.text,
+                //matchNameInput.text,
+				"ROOM " + numMatches.ToString(),
                 (uint)lobbyManager.maxPlayers,
                 true,
 				"", "", "", 0, 0,

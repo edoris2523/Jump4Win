@@ -8296,6 +8296,8 @@ MonoBehaviour:
   - {fileID: 562595512}
   - {fileID: 1247656243}
   - {fileID: 1514380309}
+  compensateValue: 30
+  xmodifier: -5
 --- !u!114 &1611764329
 MonoBehaviour:
   m_ObjectHideFlags: 0

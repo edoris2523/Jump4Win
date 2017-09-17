@@ -47,7 +47,43 @@ public class smoothPlayerController_NET : NetworkBehaviour {
 
 	// Update is called once per frame
 	void FixedUpdate () {
-		Vector2 input = new Vector2 (Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
+		Vector2 input = new Vector2(0,0);
+		float xPos = Input.GetAxis ("Mouse X");
+		float yPos = Input.GetAxis ("Mouse Y");
+		float TouchTime;
+		float TouchTime2;
+
+		// Using Touch
+		if (Input.touchCount > 0) {
+			TouchTime = Time.time;
+
+
+			if (Input.touches[0].phase == TouchPhase.Began) {
+				TouchTime = Time.time;
+
+			}
+
+			if(Input.touches[0].phase == TouchPhase.Moved)
+			{
+				xPos = Input.touches [0].deltaPosition.x;
+				yPos = Input.touches [0].deltaPosition.y;
+				input = new Vector2 (xPos, yPos);
+			}
+
+			if (Input.touches[0].phase == TouchPhase.Ended || Input.touches[0].phase == TouchPhase.Canceled)
+			{
+				if (Time.time - TouchTime <= 0.2f)
+				{
+					Jump();
+				}
+			}
+		} 
+
+		else {
+
+			input = new Vector2 (Input.GetAxisRaw ("Horizontal"), Input.GetAxisRaw ("Vertical"));
+
+		}
 		Vector2 inputDir = input.normalized;
 		bool running = Input.GetKey (KeyCode.LeftShift);
 
@@ -97,13 +133,13 @@ public class smoothPlayerController_NET : NetworkBehaviour {
 
 		Vector3 tureVelocity = transform.forward * targetSpeed * Time.deltaTime;
 
-//		if (dragged) {
-//			tureVelocity += new Vector3(9f, 0f, 0f) * Time.deltaTime;
-//		} 
+		//		if (dragged) {
+		//			tureVelocity += new Vector3(9f, 0f, 0f) * Time.deltaTime;
+		//		} 
 
 		transform.Translate (tureVelocity, Space.World);
 	}
-		
+
 	void Jump(){
 		if(controller.isGrounded){
 			audioPlayer.CmdPlayJumpSound ();
@@ -111,7 +147,7 @@ public class smoothPlayerController_NET : NetworkBehaviour {
 			velocityY = jumpVelocity;
 		}
 	}
-		
+
 	public void forcedJump(){
 		float jumpVelocity = Mathf.Sqrt (-2 * gravity * jumpHeight * 3);
 		velocityY = jumpVelocity;
